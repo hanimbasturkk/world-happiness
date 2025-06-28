@@ -1,46 +1,81 @@
 
-# 🌍 Dünya Mutluluk Raporu Analizi
+# 🌍 Dünya Mutluluk Raporu Analizi: Toplumsal Refahın Faktörleri ve Yıllık Değişimleri
 
-Bu proje, **Birleşmiş Milletler Sürdürülebilir Kalkınma Çözümleri Ağı** tarafından yayımlanan **Dünya Mutluluk Raporları**'nın 2015, 2016 ve 2017 verilerini analiz ederek ülkelerin mutluluk düzeylerini ve bu düzeyleri etkileyen temel faktörleri incelemektedir. Amaç, mutluluğun çok boyutlu yapısını anlamak ve toplumsal refahı artırmaya yönelik içgörüler sunmaktır.
-
----
-
-## 🎯 Proje Hedefleri
-
-- 📈 **Mutluluk Liderlerini Belirleme:** Hangi ülkeler genel mutluluk ve alt faktörlerde lider?
-- 🔁 **Yıllık Değişimlerin İncelenmesi:** 2015–2017 yılları arasında mutluluk skorları nasıl değişti?
-- ⚖️ **Artış ve Azalışların Analizi:** En büyük değişimi yaşayan ülkeler hangileri? Neden?
+Bu proje, Birleşmiş Milletler Sürdürülebilir Kalkınma Çözümleri Ağı tarafından yayımlanan Dünya Mutluluk Raporları'nın 2015, 2016 ve 2017 yıllarına ait verilerini kullanarak ülkelerin mutluluk düzeylerini ve bu düzeyleri etkileyen temel faktörleri derinlemesine analiz etmeyi amaçlamaktadır. Proje, mutluluk kavramının çok boyutlu yapısını anlamayı ve toplumsal refahın artırılmasına yönelik potansiyel içgörüler sunmayı hedeflemektedir.
 
 ---
 
-## 📊 Kullanılan Veri Seti
+## 🎯 Proje Amacı
 
-Veriler Kaggle’daki **World Happiness Report** sayfasından alınmıştır. Kullanılan yıllar: `2015`, `2016`, `2017`.
+Bu analizle aşağıdaki ana sorulara yanıtlar aranmıştır:
 
-### Temel Değişkenler:
-- `Country`: Ülke adı
-- `Happiness Rank`: Mutluluk sıralaması
-- `Happiness Score`: Mutluluk skoru (0-10 arası)
-- `GDP per Capita`: Kişi başı ekonomik üretim
-- `Social Support`: Sosyal destek algısı
-- `Healthy Life Expectancy`: Sağlıklı yaşam süresi
-- `Freedom`: Yaşam tercihleri yapabilme özgürlüğü
-- `Perceptions of Corruption`: Yolsuzluk algısı
-- `Generosity`: Cömertlik
-- `Year`: Verinin ait olduğu yıl
+- **Genel Mutlulukta ve Katkıda Bulunan Faktörlerde Lider Ülkeler:** Hangi ülkeler genel mutlulukta ve katkı yapan faktörlerde öne çıkıyor?
+- **Yıllık Mutluluk Trendleri:** Ülkeler yıllar içinde nasıl değişti?
+- **Önemli Artış ve Azalışlar:** Hangi ülkelerde dramatik değişimler gözlemlendi? Olası nedenler neler olabilir?
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## 📊 Veri Seti
 
-| Kütüphane     | Açıklama                            |
-|--------------|-------------------------------------|
-| `pandas`     | Veri yükleme, işleme ve analiz      |
-| `numpy`      | Sayısal hesaplamalar                |
-| `matplotlib` | Temel veri görselleştirme           |
-| `seaborn`    | İstatistiksel grafikler ve ısı haritaları |
+Veriler, Kaggle’daki World Happiness Report veri setinden alınmıştır. 2015, 2016 ve 2017 yılları kullanılmıştır.
+
+**Temel sütunlar:**
+
+- `Country`: Ülke adı  
+- `Sıralama`: Mutluluk sırası  
+- `Mutluluk Skoru`: 0-10 arası puan  
+- `GDP per Capita`: Ekonomik üretim  
+- `Sosyal Destek`: Toplumsal destek  
+- `Yaşam Beklentisi`: Sağlıklı yaşam süresi  
+- `Özgürlük`: Tercih özgürlüğü  
+- `Yolsuzluk Algısı`: Yolsuzluk algısı (düşük algı = yüksek mutluluk)  
+- `Cömertlik`: Yardım etme eğilimi  
+- `Yıl`: Verinin yılı  
 
 ---
+
+## 🛠️ Kullanılan Kütüphaneler
+
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+
+---
+
+## 🚀 Proje Adımları
+
+1. **Ortam Kurulumu**  
+   Kütüphaneler içeri aktarıldı, ayarlar yapıldı.
+
+2. **Veri Yükleme ve Ön İşleme**  
+   - CSV dosyaları yüklendi  
+   - 'Yıl' sütunu eklendi  
+   - Sütun adları Türkçeleştirildi  
+   - Tüm yıllar birleştirildi (`df_all`)  
+   - Eksik veri kontrolü yapıldı (yok)
+
+3. **Keşifsel Veri Analizi (EDA)**  
+   - En mutlu 10 ülke listelendi  
+   - Her faktörde en yüksek 5 ülke belirlendi  
+
+4. **Yıllar Arası Değişim Analizi**  
+   - 2015-2016 ve 2016-2017 karşılaştırmaları yapıldı  
+   - En fazla artış/azalış yaşayan ülkeler tespit edildi  
+
+5. **Veri Görselleştirme**  
+   - En mutlu 10 ülke için bar grafik  
+   - 2017 yılı için korelasyon ısı haritası  
+   - Seçili ülkeler için çizgi grafik  
+
+---
+
+## 💡 Temel İçgörüler
+
+- **İskandinav Ülkeleri Zirvede:** Finlandiya, Danimarka, Norveç, İzlanda ve İsviçre mutlulukta istikrarı sürdürüyor.
+- **Ekonomik ve Sosyal Faktörler Önemli:** GDP, sosyal destek ve yaşam beklentisi en yüksek korelasyona sahip.
+- **Mutluluk Dinamikleri Değişken:** Venezuela gibi ülkelerde yıllar içinde ciddi düşüşler görülüyor.
+- **Özgürlük ve Yolsuzluk Etkisi:** Algılanan özgürlük ve düşük yolsuzluk yüksek mutlulukla ilişkilidir.
 
 
 
